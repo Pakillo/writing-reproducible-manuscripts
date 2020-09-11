@@ -1,102 +1,168 @@
 ---
-title: A minimal example
+title: Cómo escribir manuscritos reproducibles
 subtitle: With a subtitle
-author: Matthias Vogelgesang
+author: Francisco Rodríguez-Sánchez
 date: \today
 institute: Centre for Modern Beamer Themes
 output: binb::metropolis
 fontsize: 12pt
 ---
 
-```{r,setup, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(cache=TRUE)
 ```
 
-# First Section
 
-## First Frame
+## Reproducibilidad
 
-Hello, world!
+Turing table
 
-# Second Section
+## Reproducibilidad: buena para ti, buena para todos
 
-## Second Frame
-
-### Bulleted Lists
-- Element A
-- Element B
-    - B.1
-    - B.2
-- Element C    
-
-# Elements
-
-## Typography
-
-```
-The theme provides sensible defaults to
-\emph{emphasize} text, \alert{accent} parts
-or show \textbf{bold} results.
-
-In Markdown, you can also use _emphasize_ and **bold**.
-```
-
-\begin{center}becomes\end{center}
-
-The theme provides sensible defaults to \emph{emphasize} text,
-\alert{accent} parts or show \textbf{bold} results.
-
-In Markdown, you can also use _emphasize_ and **bold**.
+List of indiv & communal benefits
 
 
-## Math
+## La reproducibilidad es un gradiente
 
-\begin{equation*}
-    e = \lim_{n\to \infty} \left(1 + \frac{1}{n}\right)^n
-\end{equation*}
+Fig 1. ecosistemas (modif. Peng Science 2011)
 
 
-## R Figure Example
+## Simplest reproducibility
 
-The following code generates the plot on the next slide (taken from
-`help(bxp)` and modified slightly):
+Share data (github, piggyback, repos) and code. Archived on public repository (not website, not github, eg Zenodo, figshare, dryad, etc)
 
-```{r pressureCode, eval=FALSE}
-library(stats)
-set.seed(753)
-bx.p <- boxplot(split(rt(100, 4),
-                      gl(5, 20)), plot=FALSE)
-bxp(bx.p, notch = FALSE, boxfill = "lightblue",
-    frame = FALSE, outl = TRUE,
-    main = "Example from help(bxp)")
-```  
+Bonus: include sessioninfo
+
+Git Version control
+
+We're still far from that
+
+## Main barriers are not technical
+
+Antica Plos Biol. Most people using R, but not sharing
+
+Publish your code: is good enough.
+(and if it not, maybe you need to learn more, or collaborate w/ people who can help?)
+Community: be constructive, not shaming. Ugly code better than no code
 
 
-## R Figure Example
-  
-```{r pressureFig, echo=FALSE}
-library(stats)
-set.seed(753)
-bx.p <- boxplot(split(rt(100, 4),
-                      gl(5, 20)), plot=FALSE)
-bxp(bx.p, notch = FALSE, boxfill = "lightblue",
-    frame = FALSE, outl = TRUE,
-    main = "Example from help(bxp)")
-```  
+# Literate programming: Rmarkdown
 
-## R Table Example
-  
-A simple `knitr::kable` example:  
+Tedious to repeat, etc (examples from Rmd workshops and paper)
 
-```{r kableEx}
-knitr::kable(mtcars[1:5, 1:8],
-             caption="(Parts of) the mtcars dataset")
-```
+## What's Rmd
+
+## Rmarkdown inline vs copy/paste
+
+
+
+## Rmd: regenerate Word/PDF/html etc dynamically with one click
+
+
+## Automatic model tables
+
+## Figures
+
+## Equations
+
+
+## Citations
+
+citr, rbbt, rcrossref, CSL
+
+
+## Rmd templates
+
+rticles, papaja, etc
+
+
+## Not only R! Computing in many languages
+
+https://bookdown.org/yihui/rmarkdown/language-engines.html
+
+
+# Research compendium
+
+## Minimal
+
+Boettiger
+
+## pkg
+
+## ADvantages
+
+- Data, text, code
+
+
+
+Continuous integration. Travis, GH actions
+
+
+
+Critique (McBain)
+
+Data external repo, then imported
+
+rrtools
+
+sessioninfo, description
+
+
+# Dependencies
+
+- checkpoint, automagic, renv
+
+# Docker
+
+- repo2docker
+
+- containerit
+
+
+
+# Binder/Holepunch
+
+- elife ERA
+
+
+
+# Workflow
+
+## makefile.R
+
+## Drake/targets
+
+
+
+
+
+
+
+
 
 ## Resources
 
-### For more information:
-- See the [Metropolis repository](https://github.com/matze/mtheme) for more on Metropolis
-- See the [RMarkdown repository](https://github.com/rstudio/rmarkdown) for more on RMarkdown
-- See the [binb repository](https://github.com/eddelbuettel/binb) for more on binb 
-- See the [binb vignettes](https://github.com/eddelbuettel/binb/vignettes) for more examples.
+https://rmd4sci.njtierney.com/
+
+rmd bookdowns
+
+
+https://annakrystalli.me/rrtools-repro-research/
+
+https://annakrystalli.me/talks/user2020.html#1
+
+https://annakrystalli.me/talks/r-in-repro-research-dc-leedsrss.html#1
+
+https://codecheck.org.uk/
+
+https://nevrome.github.io/rrtools.tutorial.mpi2020/
+
+Karthik's talk
+
+
+
+
+
+
+
+
