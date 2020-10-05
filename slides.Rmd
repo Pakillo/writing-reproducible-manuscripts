@@ -1,6 +1,6 @@
 ---
 title: Cómo escribir manuscritos reproducibles
-subtitle: \small (algunas ideas)
+subtitle: \small      (algunas ideas y herramientas)
 author: Francisco Rodríguez-Sánchez
 date: '@frod_san'
 institute: https://frodriguezsanchez.net
@@ -38,8 +38,8 @@ DATOS + CÓDIGO
 
 ## La ciencia debe ser reproducible
 
-```{r out.width = '3in', out.height = '1.6in'}
-include_graphics("images/ReproducibleMatrix.jpg")
+```{r out.width = '4in', out.height = '2.2in'}
+include_graphics("images/tabla-traducida.png")
 ```
 
 \raggedright 
@@ -185,7 +185,7 @@ include_graphics("images/good-enough.png")
 
 https://rstats.wtf
 
-```{r out.width = '4in', out.height = '1.1in'}
+```{r out.width = '4in', out.height = '1in'}
 include_graphics("images/wtf.png")
 ```
 
@@ -224,7 +224,7 @@ include_graphics("images/git.png")
 
 https://codecheck.org.uk 
 
-```{r out.width = '2.5in', out.height = '1.2in'}
+```{r out.width = '2.5in', out.height = '1.3in'}
 include_graphics("images/codecheck.png")
 ```
 
@@ -304,7 +304,9 @@ include_graphics("images/goodenough.png")
 
 ## Desconexión de código y manuscrito genera problemas
 
-*Incluir Fig R vs Word (broken workflow)*
+```{r out.width = '3in', out.height = '1in'}
+include_graphics("images/R_Word_comm.png")
+```
 
 
 'Transcribing numbers **from stats software to ms by hand** 
@@ -327,7 +329,7 @@ include_graphics("images/copy-paste.png")
 ```
 
 
-## Reproducible workflows video
+## Las ventajas de la reproducibilidad en <2 minutos
 
 ```{r out.width = '3.5in', out.height = '2.2in'}
 include_graphics("images/horrormovie.png")
@@ -495,6 +497,17 @@ include_graphics("images/citations-Rstudio14.png")
 ```
 
 \tiny https://rstudio.github.io/visual-markdown-editing/#/citations
+
+
+## ¡No olvides citar los paquetes de R!
+
+Rmarkdown:
+
+\ \hspace{5mm} `knitr::write_bib()`
+
+Procesador texto:
+
+\ \hspace{5mm} `grateful::cite_packages()`
 
 
 ## Formatea bibliografía para cualquier revista
@@ -669,7 +682,7 @@ sessionInfo()
 library("checkpoint")
 checkpoint("2019-10-08")
 
-source("myscript.R")
+source("analysis.R")
 ```
 
 1. Detecta paquetes usados en el proyecto
@@ -862,7 +875,7 @@ include_graphics("images/travis.PNG")
 
 ## `rrtools.addin` te guía para crear un nuevo proyecto
 
-```{r out.width = '4in', out.height = '1.8in'}
+```{r out.width = '4in', out.height = '1.9in'}
 include_graphics("images/rrtools-addin.png")
 ```
 
