@@ -1,16 +1,18 @@
 ---
 title: Cómo escribir manuscritos reproducibles
-subtitle: \small      (algunas ideas y herramientas)
+subtitle: \small (algunas ideas y herramientas)
 author: Francisco Rodríguez-Sánchez
 date: '@frod_san'
 institute: https://frodriguezsanchez.net
 output: 
   binb::metropolis:
     keep_tex: no
+    pandoc_args: ["--lua-filter=hideslide.lua"]
 fontsize: 12pt
 urlcolor: blue
 header-includes:
   \definecolor{shadecolor}{RGB}{230,230,230}
+
 ---
 
 ```{r setup, include=FALSE}
@@ -36,7 +38,7 @@ DATOS + CÓDIGO
 
 
 
-## La ciencia debe ser reproducible
+## La ciencia debe ser reproducible 
 
 ```{r out.width = '4in', out.height = '2.2in'}
 include_graphics("images/tabla-traducida.png")
@@ -45,6 +47,7 @@ include_graphics("images/tabla-traducida.png")
 \raggedright 
 \footnotesize [The Turing Way](https://the-turing-way.netlify.app/welcome)
 \raggedleft
+
 
 
 ## Reproducibilidad: buena para ti, buena para todos
@@ -443,9 +446,8 @@ print(xtable(model), comment = FALSE)
 We fitted a linear model:
 
 ```{r echo=T, results="asis"}
-library("equatiomatic")
 model <- lm(happiness ~ sunshine, data = datos)
-extract_eq(model)
+equatiomatic::extract_eq(model)
 ```
 
 
@@ -469,6 +471,16 @@ report(model)
 include_graphics("images/gramr.jpg")
 ```
 
+
+-----
+
+\large 
+
+¿Cómo incluir la bibliografía
+
+en Rmarkdown?
+
+\normalsize
 
 
 ## `rcrossref`: cita artículos vía DOI
@@ -504,6 +516,8 @@ include_graphics("images/citations-Rstudio14.png")
 Rmarkdown:
 
 \ \hspace{5mm} `knitr::write_bib()`
+
+. . . 
 
 Procesador texto:
 
@@ -550,7 +564,7 @@ include_graphics("images/pnas.png")
 \end{columns}
 
 
-
+::: hide :::
 ## ¡No solo R!   Python, Julia, C++, SQL, Stan, etc
 
 `knitr` engines:
@@ -558,7 +572,7 @@ include_graphics("images/pnas.png")
 ```{r warning=FALSE}
 kable(matrix(sort(names(knitr::knit_engines$get())), nrow = 6, ncol =7))
 ```
-
+:::
 
 ## Documentos dinámicos con Rmarkdown
 
@@ -594,7 +608,7 @@ include_graphics("images/puzzle.jpeg")
 
 
 
-## Script maestro ejecuta scripts en orden
+## Script maestro ejecuta código en orden adecuado
 
 `makefile.R`
 
@@ -607,7 +621,7 @@ source("generate_report.R")
 ```
 
 
-## Script maestro ejecuta scripts en orden
+## Script maestro ejecuta código en orden adecuado
 
 \scriptsize
 
@@ -640,7 +654,7 @@ rmarkdown::render("manuscript/cercados_Almoraima/cercados_Almoraima.Rmd")
 
 ## `drake`/`targets`: control total del flujo de trabajo
 
-```{r out.width = '4in', out.height = '2in'}
+```{r out.width = '4in', out.height = '1.9in'}
 include_graphics("images/drake-plan.png")
 ```
 
@@ -651,12 +665,13 @@ include_graphics("images/drake-plan.png")
 
 # Control de dependencias
 
+::: hide :::
 ---
 
 ```{r out.width = '2.3in', out.height = '2.5in'}
 include_graphics("images/sotobosque.png")
 ```
-
+:::
 
 ---
 
@@ -740,7 +755,9 @@ Para asegurar la reproducibilidad,
 
 además de los paquetes de R
 
-necesitamos controlar el **sistema/entorno computacional**
+necesitamos controlar 
+
+el **sistema/entorno computacional**
 
 
 ---
@@ -822,6 +839,7 @@ include_graphics("images/holepunch.png")
 \normalsize
 
 
+::: hide :::
 ## Proyectos estructurados como paquetes de R
 
 >- Estructura estándar, consistente
@@ -840,6 +858,9 @@ include_graphics("images/holepunch.png")
 \tiny
 [Rodríguez-Sánchez et al. 2016](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/1178), [Marwick et al 2018](https://doi.org/10.1080/00031305.2017.1375986), but see [McBain 2020](https://milesmcbain.xyz/posts/an-okay-idea/)
 \raggedleft
+:::
+
+
 
 ## rrtools facilita la creación de compendios
 
@@ -904,6 +925,8 @@ include_graphics("images/rrtools-addin.png")
       |- derived_data/   
 ```
 
+
+::: hide :::
 ## Estructura del proyecto con funciones
 
 \scriptsize
@@ -930,7 +953,7 @@ include_graphics("images/rrtools-addin.png")
 ```
 
 \normalsize
-
+:::
 
 
 
