@@ -34,10 +34,10 @@ DATOS + CÓDIGO
 
 - **trazar** proceso de análisis
 
-- **reproducir** (regenerar) todos los resultados.
+- **reproducir** (regenerar) todos los resultados
 
 
-
+::: hide :::
 ## La ciencia debe ser reproducible 
 
 ```{r out.width = '4in', out.height = '2.2in'}
@@ -59,6 +59,9 @@ include_graphics("images/tabla-traducida.png")
 + Impacto (citas, reconocimiento)
 + Reutilización (datos y código)
 + Archivo permanente
+
+:::
+
 
 
 ---
@@ -115,7 +118,7 @@ include_graphics("images/Fig1.jpg")
 
 >- **README** (who, what, when, where, why, how)
 
->- Diccionario (**descripción variables**: `dataspice`, `codebook`)
+>- **Descripción variables** (`dataspice`, `codebook`)
 
 >- **Licencia** (CC0, CC-BY, ODbL)
 
@@ -152,6 +155,8 @@ sessionInfo()
 ```
 
 \normalsize
+
+
 
 
 ## Cómo escribir código más reproducible
@@ -193,6 +198,21 @@ include_graphics("images/wtf.png")
 ```
 
 
+## Cómo escribir código más reproducible
+
+Control de versiones (`git`)
+
+```{r out.width = '3.5in', out.height = '1.7in'}
+include_graphics("images/git.png")
+```
+
+\raggedright
+\tiny [R. Fitzjohn](https://github.com/richfitz/reproducibility-2014)
+\raggedleft
+
+
+
+
 
 ## Cómo escribir código más reproducible
 
@@ -210,17 +230,6 @@ setwd("C:/Users/FRS")
 \scriptsize https://github.com/baumer-lab/fertile
 
 
-## Cómo escribir código más reproducible
-
-Control de versiones (`git`)
-
-```{r out.width = '3.5in', out.height = '1.7in'}
-include_graphics("images/git.png")
-```
-
-\raggedright
-\tiny [R. Fitzjohn](https://github.com/richfitz/reproducibility-2014)
-\raggedleft
 
 
 ## Codecheck: ¿es tu artículo reproducible?
@@ -481,6 +490,7 @@ include_graphics("images/gramr.jpg")
 ```
 
 
+::: hide :::
 -----
 
 \large 
@@ -511,7 +521,10 @@ include_graphics("images/rcrossref-metadata.png")
 include_graphics("images/citr.png")
 ```
 
-## Rstudio 1.4 facilita cita de múltiples fuentes
+:::
+
+
+## Bibliografía: Cita via DOI, búsqueda, Zotero... (RStudio 1.4)
 
 ```{r out.width = '3.5in', out.height = '2.5in'}
 include_graphics("images/citations-Rstudio14.png")
@@ -816,17 +829,13 @@ include_graphics("images/holepunch.png")
 
 ## Principios sobre organización de proyectos
 
-- Una carpeta con todos los ficheros
-
 - README
 
 - Licencia
 
-- Datos brutos separados de limpios (+ código)
+- Datos brutos + limpios + código depuración
 
-- Funciones independientes del análisis
-
-- Funciones documentadas y testadas
+- Código modular (funciones) 
 
 - Makefile
 
@@ -836,6 +845,8 @@ include_graphics("images/holepunch.png")
 [Noble 2009](https://doi.org/10.1371/journal.pcbi.1000424), [Rodriguez-Sanchez et al 2016](https://www.revistaecosistemas.net/index.php/ecosistemas/article/view/1178), [Wilson et al 2017]( https://doi.org/10.1371/journal.pcbi.1005510) 
 \normalsize
 
+
+::: hide :::
 
 ---
 
@@ -850,7 +861,7 @@ include_graphics("images/holepunch.png")
 \normalsize
 
 
-::: hide :::
+
 ## Proyectos estructurados como paquetes de R
 
 >- Estructura estándar, consistente
@@ -873,7 +884,7 @@ include_graphics("images/holepunch.png")
 
 
 
-## rrtools facilita la creación de compendios
+## rrtools facilita la creación de compendios (paquetes)
 
 \footnotesize
 
@@ -992,11 +1003,11 @@ include_graphics("images/workflowr.png")
 
 >- **Rmarkdown**: integra análisis + texto en documento dinámico
 
->- **Control de operaciones**: `makefile`, `drake`/`targets`
+>- **Control de operaciones**: makefile, drake/targets
 
->- **Dependencias**: sessionInfo -> paquetes R -> Docker/Guix
+>- **Dependencias**: sessionInfo -> paquetes R -> Docker
 
->- **Estructura consistente de proyectos**: `rrtools`, `workflowr`...
+>- **Estructura consistente de proyectos**: rrtools, workflowr...
 
 
 ---
